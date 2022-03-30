@@ -10,6 +10,9 @@ public class CameraController : MonoBehaviour
     public int Smoothvalue = 2;
     public float PosY = 5;
     public float PosZ = 5;
+
+    //public float PosX = 15;
+
     public float tilt = 30;
 
     private GameObject Target;
