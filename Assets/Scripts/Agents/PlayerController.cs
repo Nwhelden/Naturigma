@@ -102,6 +102,16 @@ public class PlayerController : MonoBehaviour
         disabled = !disabled;
     }
 
+    public void Disable()
+    {
+        disabled = true;
+    }
+
+    public bool isActive()
+    {
+        return !disabled;
+    }
+
     //for some reason this causes the character to roll?
     /*
      Vector3 moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));

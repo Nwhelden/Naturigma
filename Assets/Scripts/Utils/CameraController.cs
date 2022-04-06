@@ -14,6 +14,7 @@ public class CameraController : MonoBehaviour
 
     private GameObject Target;
     private bool toggle = true;
+    private bool disabled = false;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class CameraController : MonoBehaviour
         rotation.x = tilt;
         transform.rotation = Quaternion.Euler(rotation);
 
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (!disabled && Input.GetKeyDown(KeyCode.Return))
         {
             toggle = !toggle;
             Target =  toggle ? Agent1 : Agent2;
@@ -38,5 +39,15 @@ public class CameraController : MonoBehaviour
             Agent1.GetComponent<PlayerController>().ToggleActive();
             Agent2.GetComponent<PlayerController>().ToggleActive();
         }
+    }
+
+    public void DisableSwitching()
+    {
+        disabled = true;
+    }
+
+    public void EnableSwitching()
+    {
+        disabled = false;
     }
 }
