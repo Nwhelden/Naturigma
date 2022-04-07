@@ -76,7 +76,10 @@ public class Pickup : MonoBehaviour
 
         // Reset values
         curr.transform.parent = null;
-        headPad.ToggleActive();
+        if (headPad != null)
+        {
+            headPad.ToggleActive();
+        }
         curr = null;
     }
 
@@ -96,7 +99,10 @@ public class Pickup : MonoBehaviour
 
             // Disable Player's bounce pad to prevent conflictions
             // Disable 
-            headPad.ToggleActive();
+            if (headPad != null)
+            {
+                headPad.ToggleActive();
+            }
 
             // Position the item over the head of the Player
             //curr.GetComponent<Rigidbody>().useGravity = false;
