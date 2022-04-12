@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private Vector3 RespawnPoint;
+    public GameObject shroomus;
+    public GameObject fungbert;
 
     // Start is called before the first frame update
     void Start()
@@ -15,7 +17,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Respawn(shroomus);
+            Respawn(fungbert);
+        }
     }
 
     public void DisableMovement()
