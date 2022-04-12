@@ -6,10 +6,12 @@ public class Pickup : MonoBehaviour
 {
     public float yOffset = 5.0f;
     public float throwForce = 10.0f;
+    public bool playerPickup = true;
 
     private bool holding = false;
     private HashSet<GameObject> items;
     private GameObject curr = null;
+    private GameObject interaction = null;
     private PlayerBouncePad headPad;
     private PlayerController player;
     private GameManager gm;
@@ -32,6 +34,10 @@ public class Pickup : MonoBehaviour
             {
                 Throw();
             }
+            else if (interaction != null)
+            {
+                Extract();
+            }
             else
             {
                 Pick();
@@ -42,19 +48,31 @@ public class Pickup : MonoBehaviour
     // If an item is within, mark it
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Item") || other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Item") || (playerPickup && other.gameObject.CompareTag("Player")))
         {
             items.Add(other.gameObject);
         }
+        /*
+        else if (other.gameObject.CompareTag("Extractable"))
+        {
+            interaction = other.gameObject;
+        }
+        */
     }
 
     //When an item leaves the player's 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Item") || other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Item") || (playerPickup && other.gameObject.CompareTag("Player")))
         {
             items.Remove(other.gameObject);
         }
+        /*
+        else if (other.gameObject.CompareTag("Extractable"))
+        {
+            interaction = null;
+        }
+        */
     }
 
     private void Throw()
@@ -112,5 +130,10 @@ public class Pickup : MonoBehaviour
 
             Debug.Log("Picked up " + curr.name);
         }
+    }
+
+    private void Extract()
+    {
+
     }
 }
