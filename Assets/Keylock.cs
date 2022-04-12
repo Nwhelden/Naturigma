@@ -6,7 +6,8 @@ public class Keylock : MonoBehaviour
 {
     public bool isOn;
     public GameObject keyGO;
-    
+    public GameObject activatedObject;
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Item" && !isOn)
@@ -23,6 +24,14 @@ public class Keylock : MonoBehaviour
             isOn = false;
             keyGO.gameObject.SetActive(true);
             keyGO.transform.position = other.transform.position + transform.up;
+        }
+    }
+
+    private void Update()
+    {
+        if (isOn)
+        {
+            activatedObject.SetActive(true);
         }
     }
 }
