@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Managers
   - Item
+  - StartPoint
+  - EndPoint
   layers:
   - Default
   - TransparentFX
