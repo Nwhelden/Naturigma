@@ -458,7 +458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   yOffset: 2.5
-  throwForce: 10
+  throwForce: 15
 --- !u!1 &6882850582101327740
 GameObject:
   m_ObjectHideFlags: 0
