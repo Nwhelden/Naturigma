@@ -11,7 +11,7 @@ public class Keylock : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         var obj = collision.gameObject;
-        if (obj.CompareTag("Item") && obj.name.Equals(keyName) && !obj.GetComponent<Key>().isHeld)
+        if (obj.CompareTag("Item") && obj.name.Equals(keyName) && !obj.GetComponent<Key>().CheckHeld())
         {
             // Position key
             obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

@@ -93,7 +93,7 @@ public class Pickup : MonoBehaviour
         }
         else if (curr.GetComponent<Key>() != null)
         {
-            curr.GetComponent<Key>().isHeld = false;
+            curr.GetComponent<Key>().SetHeld(false);
         }
 
         // Reset values
@@ -123,7 +123,7 @@ public class Pickup : MonoBehaviour
             else if (curr.GetComponent<Key>() != null)
             {
                 var key = curr.GetComponent<Key>();
-                key.isHeld = true;
+                key.SetHeld(true);
 
                 if (key.CheckActive())
                 {

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Key : MonoBehaviour
 {
-    public bool isHeld = false;
+    private bool isHeld = false;
     private bool isActive = false;
     public UnityEvent activate;
     public UnityEvent deactivate;
@@ -27,5 +27,15 @@ public class Key : MonoBehaviour
     public bool CheckActive()
     {
         return isActive;
+    }
+
+    public bool CheckHeld()
+    {
+        return isHeld;
+    }
+
+    public void SetHeld(bool held)
+    {
+        isHeld = held;
     }
 }
