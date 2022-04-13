@@ -85,11 +85,15 @@ public class Pickup : MonoBehaviour
         itemRb.useGravity = true;
         itemRb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
 
-
+        // item-specific functions
         // If an agent is thrown, enable the agent's movement
         if (curr.CompareTag("Player"))
         {
             gm.EnableSwitching();
+        }
+        else if (curr.GetComponent<Key>() != null)
+        {
+            curr.GetComponent<Key>().isHeld = false;
         }
 
         // Reset values
@@ -109,10 +113,22 @@ public class Pickup : MonoBehaviour
             var parent = gameObject.transform;
             curr = iter.Current;
 
+            // item-specific functions
             // if an agent is picked up, disable the agent's movement
+            // if key is active, deactivate it on pick-up
             if (curr.CompareTag("Player"))
             {
                 gm.DisableSwitching();
+            }
+            else if (curr.GetComponent<Key>() != null)
+            {
+                var key = curr.GetComponent<Key>();
+                key.isHeld = true;
+
+                if (key.CheckActive())
+                {
+                    key.Deactivate();
+                }
             }
 
             // Disable Player's bounce pad to prevent conflictions

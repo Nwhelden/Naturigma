@@ -4,25 +4,23 @@ using UnityEngine;
 
 public class Keylock : MonoBehaviour
 {
-    public bool isOn;
-    public GameObject keyGO;
+    public string keyName;
+    public Vector3 offset;
+    private bool active = false;
     
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Item" && !isOn)
+        var obj = collision.gameObject;
+        if (obj.CompareTag("Item") && obj.name.Equals(keyName) && !obj.GetComponent<Key>().isHeld)
         {
-            isOn = true;
-            keyGO = collision.gameObject;
-            keyGO.gameObject.SetActive(false);
-        }
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if(other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            isOn = false;
-            keyGO.gameObject.SetActive(true);
-            keyGO.transform.position = other.transform.position + transform.up;
+            // Position key
+            obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            obj.GetComponent<Rigidbody>().useGravity = false;
+            obj.transform.SetParent(gameObject.transform);
+            obj.transform.position = gameObject.transform.position + offset;
+
+            //Activate key
+            obj.GetComponent<Key>().Activate();
         }
     }
 }

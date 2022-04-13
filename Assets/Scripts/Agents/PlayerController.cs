@@ -40,11 +40,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
             canJump = true;
+            Debug.Log("Grounded");
         }
     }
 
@@ -53,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             canJump = false;
+            Debug.Log("Not Grounded");
         }
     }
 
