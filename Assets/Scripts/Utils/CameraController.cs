@@ -54,3 +54,15 @@ public class CameraController : MonoBehaviour
         disabled = false;
     }
 }
+
+/*
+transform.position = Vector3.Lerp(transform.position, Target.transform.position + offset, Smoothvalue);
+if (Input.GetKey(KeyCode.Q))
+{
+    transform.RotateAround(Targetpos, Vector3.up, 100.0f * Time.deltaTime);
+}
+else if (Input.GetKey(KeyCode.E))
+{
+    transform.RotateAround(Targetpos, Vector3.up, -100.0f * Time.deltaTime);
+}
+*/
