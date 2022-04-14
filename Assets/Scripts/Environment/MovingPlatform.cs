@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public GameObject endPoint;
-    public GameObject startPoint;
+    public Vector3 startingPos;
+    public Vector3 translationValue;
 
     public bool goToEnd = true;
 
-    float speed = 1f;
+    float speed = 0.5f;
 
     private void Start()
     {
@@ -19,17 +19,17 @@ public class MovingPlatform : MonoBehaviour
     private void Update()
     {
         if (goToEnd)
-            transform.position = Vector3.Lerp(transform.position, endPoint.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, startingPos + translationValue, speed * Time.deltaTime);
         else
-            transform.position = Vector3.Lerp(transform.position, startPoint.transform.position, speed * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, startingPos, speed * Time.deltaTime);
     }
 
     IEnumerator Flip()
     {
         goToEnd = true;
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
         goToEnd = false;
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(4f);
 
         StartCoroutine(Flip());
     }
