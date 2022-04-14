@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public void Respawn(GameObject player)
     {
         player.transform.position = RespawnPoint;
+        player.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
     }
 
     public void SetRespawn(Vector3 position)
