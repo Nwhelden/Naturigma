@@ -6,21 +6,33 @@ public class DisappearingTree : MonoBehaviour
 {
     bool disappearing;
     public float disappearTime = 2f;
-    
+
+    Collider collider;
+    MeshRenderer mesh;
+
+    private void Start()
+    {
+        collider = GetComponent<MeshCollider>();
+        mesh = GetComponent<MeshRenderer>();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (!disappearing)
         {
             disappearing = true;
-            StartCoroutine(StartDestruction());
+            StartCoroutine(StartDisappear());
         }
     }
 
-    IEnumerator StartDestruction()
+    IEnumerator StartDisappear()
     {
         yield return new WaitForSeconds(disappearTime);
-        gameObject.SetActive(false);
+        collider.enabled = false;
+        mesh.enabled = false;
         yield return new WaitForSeconds(3f);
+        collider.enabled = true;
+        mesh.enabled = true;
         gameObject.SetActive(true);
     }
 }
