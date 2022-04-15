@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3fb5a2dbc8530451faab379573c5e80a
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: AgreloyInB1
+  fontNames:
+  - AgreloyInB1
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 247c476e0a62647f783d20c84b7a7eec, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

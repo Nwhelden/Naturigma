@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: bcc0f2cde1c5e4c178400c5b49b96ae3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: AgreloyOut1
+  fontNames:
+  - AgreloyOut1
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f12d2eb711df94de88487778bde0aa4f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
