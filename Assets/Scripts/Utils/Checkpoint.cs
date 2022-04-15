@@ -5,6 +5,8 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     private GameManager gm;
+    public Vector3 shroomOffset;
+    public Vector3 fungOffset;
 
     private void Start()
     {
@@ -16,7 +18,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager gm = FindObjectOfType<GameManager>();
-            gm.SetRespawn(collision.gameObject.transform.position);
+            gm.SetRespawn(collision.gameObject, collision.gameObject.transform.position, shroomOffset, fungOffset);
         }
     }
 
@@ -25,7 +27,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager gm = FindObjectOfType<GameManager>();
-            gm.SetRespawn(collision.gameObject.transform.position);
+            gm.SetRespawn(collision.gameObject, collision.gameObject.transform.position, shroomOffset, fungOffset);
         }
     }
 }

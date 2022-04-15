@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private Vector3 RespawnPoint;
+    private Vector3 RespawnPointShroom;
+    private Vector3 RespawnPointFung;
     public GameObject shroomus;
     public GameObject fungbert;
 
     // Start is called before the first frame update
     void Start()
     {
-        RespawnPoint = GameObject.FindGameObjectWithTag("Player").transform.position;
+        RespawnPointShroom = shroomus.transform.position;
+        RespawnPointFung = fungbert.transform.position;
     }
 
     // Update is called once per frame
@@ -53,11 +55,20 @@ public class GameManager : MonoBehaviour
 
     public void Respawn(GameObject player)
     {
-        player.transform.position = RespawnPoint;
+        var rspwn = player.Equals(shroomus) ? RespawnPointShroom : RespawnPointFung;
+        player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        player.transform.position = rspwn;
     }
 
-    public void SetRespawn(Vector3 position)
+    public void SetRespawn(GameObject player, Vector3 position, Vector3 shroomOffset, Vector3 fungOffset)
     {
-        RespawnPoint = position;
+        if (player.Equals(shroomus))
+        {
+            RespawnPointShroom = position + shroomOffset;
+        }
+        else
+        {
+            RespawnPointFung = position + fungOffset;
+        }
     }
 }

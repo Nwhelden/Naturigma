@@ -5,10 +5,16 @@ using UnityEngine.Events;
 
 public class Key : MonoBehaviour
 {
+    private Vector3 originalPos;
     private bool isHeld = false;
     private bool isActive = false;
     public UnityEvent activate;
     public UnityEvent deactivate;
+
+    private void Start()
+    {
+        originalPos = transform.position;
+    }
 
     // Activate causes change
     public void Activate()
@@ -22,6 +28,12 @@ public class Key : MonoBehaviour
     {
         isActive = false;
         deactivate.Invoke();
+    }
+
+    public void Respawn()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        transform.position = originalPos;
     }
 
     public bool CheckActive()

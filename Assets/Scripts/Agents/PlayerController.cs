@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /*
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Not Grounded");
         }
     }
+    */
 
     private void HandleAnimations(float hMovement, float vMovement)
     {
@@ -87,6 +89,16 @@ public class PlayerController : MonoBehaviour
         }
 
         // Jump
+        LayerMask groundLayer = LayerMask.GetMask("Ground");
+        if (Physics.CheckSphere(transform.position, GetComponent<CapsuleCollider>().radius, groundLayer))
+        {
+            canJump = true;
+        }
+        else
+        {
+            canJump = false;
+        }
+
         if (Input.GetKeyDown(KeyCode.Space) && canJump)
         {
             rb.AddForce(jumpDir * jumpPower, ForceMode.Impulse);
