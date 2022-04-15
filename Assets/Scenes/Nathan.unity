@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddc498ca42ac7c47b4fe4e1914f7e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shroomOffset: {x: 2, y: 0, z: 0}
+  fungOffset: {x: -2, y: 0, z: 0}
 --- !u!65 &27262309
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -261,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: Key
-  offset: {x: 0, y: 2, z: 0}
+  KeyOffset: {x: 0, y: 0, z: 0}
 --- !u!65 &129773947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -456,6 +458,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddc498ca42ac7c47b4fe4e1914f7e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shroomOffset: {x: 0, y: 2, z: 0}
+  fungOffset: {x: -2, y: 0, z: 0}
 --- !u!65 &493633040
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -860,7 +864,7 @@ GameObject:
   - component: {fileID: 885986220}
   - component: {fileID: 885986219}
   - component: {fileID: 885986218}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (2)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1203,7 +1207,7 @@ GameObject:
   - component: {fileID: 1327437010}
   - component: {fileID: 1327437009}
   - component: {fileID: 1327437008}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1560,7 +1564,7 @@ GameObject:
   - component: {fileID: 1840207141}
   - component: {fileID: 1840207140}
   - component: {fileID: 1840207139}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Plane (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -1832,6 +1836,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 71288864924111313, guid: 73539d132f854674890cc2d79a05438e,
+        type: 3}
+      propertyPath: fungbert
+      value: 
+      objectReference: {fileID: 460755475}
+    - target: {fileID: 71288864924111313, guid: 73539d132f854674890cc2d79a05438e,
+        type: 3}
+      propertyPath: shroomus
+      value: 
+      objectReference: {fileID: 2039722730}
     - target: {fileID: 71288864924111314, guid: 73539d132f854674890cc2d79a05438e,
         type: 3}
       propertyPath: m_Name
