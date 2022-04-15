@@ -17,6 +17,14 @@ public class Hazard : MonoBehaviour
         {
             gm.Respawn(other.gameObject);
         }
+        else if (other.gameObject.CompareTag("Item"))
+        {
+            var key = other.gameObject.GetComponent<Key>();
+            if (key != null)
+            {
+                key.Respawn();
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -24,6 +32,14 @@ public class Hazard : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             gm.Respawn(collision.gameObject);
+        }
+        else if (collision.gameObject.CompareTag("Item"))
+        {
+            var key = collision.gameObject.GetComponent<Key>();
+            if (key != null)
+            {
+                key.Respawn();
+            }
         }
     }
 }
