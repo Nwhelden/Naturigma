@@ -10,7 +10,7 @@ public class MovingPlatformLever : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
-            movingPlatform.goToEnd = !movingPlatform.goToEnd;
+            movingPlatform.Transition();
         }
     }
 }

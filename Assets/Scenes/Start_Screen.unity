@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3263,6 +3263,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457015719774386125, guid: da0b83ea95347408a8c77f13adbd1f9a,
+        type: 3}
+      propertyPath: loadlevel1
+      value: Master_Level_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1457015719774386125, guid: da0b83ea95347408a8c77f13adbd1f9a,
+        type: 3}
+      propertyPath: loadlevel2
+      value: Master_Level_2_Layout
       objectReference: {fileID: 0}
     - target: {fileID: 1457015719774386126, guid: da0b83ea95347408a8c77f13adbd1f9a,
         type: 3}
