@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start_Screen.unity
     guid: 385106436df004fb99c1cbace82445c2
+  - enabled: 1
+    path: Assets/Scenes/Master_Level_1.unity
+    guid: f1605d0723fb05042bf0bbe4c4d913f3
+  - enabled: 1
+    path: Assets/Scenes/Master_Level_2_Layout.unity
+    guid: 08b0f4e7a8ba244719d2377c06e23923
   m_configObjects: {}
