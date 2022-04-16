@@ -38,7 +38,7 @@ public class MovingPlatform : MonoBehaviour
     
     public void Transition()
     {
-        transform.position = transform.position + new Vector3(0, 11, 0);
+        transform.position = transform.position + new Vector3(0, 6.5f, 0);
         shroomus.transform.position = respawnLeft.transform.position;
         fungbert.transform.position = respawnRight.transform.position;
     }
