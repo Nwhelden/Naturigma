@@ -5,7 +5,7 @@ using UnityEngine;
 public class Keylock : MonoBehaviour
 {
     public string keyName;
-    public Vector3 offset;
+    public Vector3 KeyOffset;
     private bool active = false;
     
     private void OnTriggerEnter(Collider collision)
@@ -17,7 +17,7 @@ public class Keylock : MonoBehaviour
             obj.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             obj.GetComponent<Rigidbody>().useGravity = false;
             obj.transform.SetParent(gameObject.transform);
-            obj.transform.position = gameObject.transform.position + offset;
+            obj.transform.position = gameObject.transform.position + KeyOffset;
 
             //Activate key
             obj.GetComponent<Key>().Activate();
