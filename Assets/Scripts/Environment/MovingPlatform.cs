@@ -4,33 +4,42 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    /*
     public Vector3 startingPos;
     public Vector3 translationValue;
 
-    public bool goToEnd = true;
+    public bool goToEnd;
 
-    float speed = 0.5f;
+    public float speed = 5f;
 
     private void Start()
     {
-        StartCoroutine(Flip());
+        goToEnd = false;
     }
 
     private void Update()
     {
         if (goToEnd)
-            transform.position = Vector3.Lerp(transform.position, startingPos + translationValue, speed * Time.deltaTime);
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startingPos + translationValue, speed * Time.deltaTime);
+        }
         else
-            transform.position = Vector3.Lerp(transform.position, startingPos, speed * Time.deltaTime);
+        {
+            transform.position = Vector3.MoveTowards(transform.position, startingPos, speed * Time.deltaTime);
+        }
     }
+    */
 
-    IEnumerator Flip()
+    public GameObject respawnLeft;
+    public GameObject respawnRight;
+
+    public GameObject shroomus;
+    public GameObject fungbert;
+    
+    public void Transition()
     {
-        goToEnd = true;
-        yield return new WaitForSeconds(4f);
-        goToEnd = false;
-        yield return new WaitForSeconds(4f);
-
-        StartCoroutine(Flip());
+        transform.position = transform.position + new Vector3(0, 11, 0);
+        shroomus.transform.position = respawnLeft.transform.position;
+        fungbert.transform.position = respawnRight.transform.position;
     }
 }
