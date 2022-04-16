@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    /*
     public Vector3 startingPos;
     public Vector3 translationValue;
 
@@ -25,18 +26,20 @@ public class MovingPlatform : MonoBehaviour
         else
         {
             transform.position = Vector3.MoveTowards(transform.position, startingPos, speed * Time.deltaTime);
-        }    
-        //transform.position = Vector3.Lerp(transform.position, startingPos + translationValue, speed * Time.deltaTime);
-        //transform.position = Vector3.Lerp(transform.position, startingPos, speed * Time.deltaTime);
+        }
     }
+    */
 
-    /*IEnumerator Flip()
+    public GameObject respawnLeft;
+    public GameObject respawnRight;
+
+    public GameObject shroomus;
+    public GameObject fungbert;
+    
+    public void Transition()
     {
-        goToEnd = true;
-        yield return new WaitForSeconds(4f);
-        goToEnd = false;
-        yield return new WaitForSeconds(4f);
-
-        StartCoroutine(Flip());
-    }*/
+        transform.position = transform.position + new Vector3(0, 6.5f, 0);
+        shroomus.transform.position = respawnLeft.transform.position;
+        fungbert.transform.position = respawnRight.transform.position;
+    }
 }
