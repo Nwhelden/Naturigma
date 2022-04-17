@@ -6495,8 +6495,8 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 644038392}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &1754837157
-CapsuleCollider:
+--- !u!65 &1754837157
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -6505,9 +6505,8 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.3721156
-  m_Height: 1.4272671
-  m_Direction: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7442312, y: 1.4272671, z: 0.71791804}
   m_Center: {x: -0.020887196, y: 0.7137445, z: -0.14908515}
 --- !u!54 &1754837160
 Rigidbody:
