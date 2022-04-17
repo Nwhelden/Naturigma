@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: Key
-  KeyOffset: {x: 0, y: 0, z: 0}
+  KeyOffset: {x: 0, y: 2, z: 0}
 --- !u!65 &129773947
 BoxCollider:
   m_ObjectHideFlags: 0
