@@ -18,7 +18,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager gm = FindObjectOfType<GameManager>();
-            gm.SetRespawn(collision.gameObject, collision.gameObject.transform.position, shroomOffset, fungOffset);
+            gm.SetRespawn(collision.gameObject, transform.position, shroomOffset, fungOffset);
         }
     }
 
@@ -27,7 +27,7 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager gm = FindObjectOfType<GameManager>();
-            gm.SetRespawn(collision.gameObject, collision.gameObject.transform.position, shroomOffset, fungOffset);
+            gm.SetRespawn(collision.gameObject, transform.position, shroomOffset, fungOffset);
         }
     }
 }
