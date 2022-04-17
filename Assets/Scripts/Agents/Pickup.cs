@@ -140,6 +140,7 @@ public class Pickup : MonoBehaviour
 
             // Position the item over the head of the Player
             //curr.GetComponent<Rigidbody>().useGravity = false;
+            curr.transform.rotation = new Quaternion(0f, 0f, 0f, 0f);
             curr.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             curr.transform.SetParent(gameObject.transform);
             curr.transform.position = new Vector3(parent.position.x, parent.position.y + yOffset, parent.position.z);

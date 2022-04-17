@@ -16,7 +16,6 @@ public class Key : MonoBehaviour
         originalPos = transform.position;
     }
 
-    // Activate causes change
     public void Activate()
     {
         isActive = true;
