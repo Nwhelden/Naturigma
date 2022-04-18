@@ -5,12 +5,34 @@ using UnityEngine;
 public class MovingPlatformLever : MonoBehaviour
 {
     public MovingPlatform movingPlatform;
+    private bool canActivate = false;
 
-    private void OnTriggerStay(Collider other)
+    public void Update()
     {
-        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && canActivate)
         {
-            movingPlatform.Transition();
+            movingPlatform.Toggle();
+
+            if (GetComponent<AudioSource>() != null)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerController>().isActive())
+        {
+            canActivate = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerController>().isActive())
+        {
+            canActivate = false;
         }
     }
 }
