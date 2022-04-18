@@ -8,7 +8,7 @@ public class Keylock : MonoBehaviour
     public string keyName;
     public AudioClip unlockSFX;
     public AudioClip lockSFX;
-    public Vector3 KeyOffset;
+    public Vector3 KeyPos;
     public UnityEvent activate;
     public UnityEvent deactivate;
 
@@ -25,7 +25,7 @@ public class Keylock : MonoBehaviour
             key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             key.GetComponent<Rigidbody>().useGravity = false;
             key.transform.SetParent(gameObject.transform);
-            key.transform.position = gameObject.transform.position + KeyOffset;
+            key.transform.position = KeyPos;
 
             //Activate key
             Activate();
