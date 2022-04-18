@@ -7,6 +7,7 @@ public class MultiLeverControl : MonoBehaviour
     public bool isOn;
     public OtherLever otherLever;
     public GameObject activatedObject;
+    private bool canActivate = false;
 
     public void Update()
     {
@@ -18,15 +19,34 @@ public class MultiLeverControl : MonoBehaviour
         {
             activatedObject.SetActive(false);
         }
-    }
 
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E) && !isOn)
+        if (Input.GetKeyDown(KeyCode.E) && !isOn && canActivate)
         {
+
             //animate lever flip
             transform.Rotate(0, 180, 0);
             isOn = true;
+
+            if (GetComponent<AudioSource>() != null)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerController>().isActive())
+        {
+            canActivate = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerController>().isActive())
+        {
+            canActivate = false;
         }
     }
 }

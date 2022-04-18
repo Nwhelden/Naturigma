@@ -4,42 +4,37 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
-    /*
-    public Vector3 startingPos;
-    public Vector3 translationValue;
-
-    public bool goToEnd;
-
+    private Vector3 startPos;
+    public float destY;
+    private bool goToEnd;
     public float speed = 5f;
 
     private void Start()
     {
         goToEnd = false;
+        startPos = transform.position;
     }
 
+    // Right now this just moves the platform up to the specified Y pos
+    // Let me know if you want the platform to move across X and Z
     private void Update()
     {
         if (goToEnd)
         {
-            transform.position = Vector3.MoveTowards(transform.position, startingPos + translationValue, speed * Time.deltaTime);
+            if (transform.position.y < destY) {
+                GetComponent<Rigidbody>().MovePosition(transform.position + Vector3.up * 1.0f * Time.deltaTime);
+            }
         }
         else
         {
-            transform.position = Vector3.MoveTowards(transform.position, startingPos, speed * Time.deltaTime);
+            if (transform.position.y > startPos.y) {
+                GetComponent<Rigidbody>().MovePosition(transform.position + -Vector3.up * 1.0f * Time.deltaTime);
+            }
         }
     }
-    */
 
-    public GameObject respawnLeft;
-    public GameObject respawnRight;
-
-    public GameObject shroomus;
-    public GameObject fungbert;
-    
-    public void Transition()
+    public void Toggle()
     {
-        transform.position = transform.position + new Vector3(0, 6.5f, 0);
-        shroomus.transform.position = respawnLeft.transform.position;
-        fungbert.transform.position = respawnRight.transform.position;
+        goToEnd = !goToEnd;
     }
 }
