@@ -7,18 +7,23 @@ public class PlayerController : MonoBehaviour
     public float movSpeed = 5.0f;
     public float rotSpeed = 0.15f;
     public float jumpPower = 2.0f;
+    public AudioClip moveSFX;
+    public AudioClip jumpSFX;
+    public AudioClip deathSFX;
 
     private bool canJump = false;
     private bool disabled = false;
     private Vector3 jumpDir;
     private Animator animator;
     private Rigidbody rb;
+    private AudioSource aSource;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
+        aSource = GetComponent<AudioSource>();
         jumpDir = new Vector3(0.0f, 2.0f, 0.0f);
     }
 
@@ -35,30 +40,18 @@ public class PlayerController : MonoBehaviour
             vMovement = Input.GetAxisRaw("Vertical");
 
             HandleAnimations(hMovement, vMovement);
+            HandleAudio(hMovement, vMovement);
             HandleMovement(hMovement, vMovement);
-            //HandleAudio(hMovement, vMovement);
         }
     }
 
-    /*
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.GetComponent<Hazard>() && deathSFX)
         {
-            canJump = true;
-            Debug.Log("Grounded");
+            aSource.PlayOneShot(deathSFX);
         }
     }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.tag == "Ground")
-        {
-            canJump = false;
-            Debug.Log("Not Grounded");
-        }
-    }
-    */
 
     private void HandleAnimations(float hMovement, float vMovement)
     {
@@ -106,9 +99,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void HandleAudio()
+    private void HandleAudio(float hMovement, float vMovement)
     {
+        if ((hMovement != 0 || vMovement != 0) && moveSFX != null)
+        {
+            aSource.PlayOneShot(moveSFX);
+        }
 
+        if (Input.GetKeyDown(KeyCode.Space) && canJump && jumpSFX != null)
+        {
+            aSource.time = 0.75f;
+            aSource.PlayOneShot(jumpSFX);
+            aSource.time = 0.0f;
+        }
     }
 
     public void ToggleActive()
