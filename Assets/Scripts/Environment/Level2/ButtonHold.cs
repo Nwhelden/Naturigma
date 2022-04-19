@@ -14,9 +14,10 @@ public class ButtonHold : MonoBehaviour
         cooldown -= Time.deltaTime;
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player" && cooldown <= 0f)
+        if (other.gameObject.tag == "Player" && cooldown <= 0f)
         {
             isOn = true;
             transform.position -= buttonTranslation;
@@ -24,9 +25,9 @@ public class ButtonHold : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if(cooldown <= 0)
+        if (cooldown <= 0)
         {
             isOn = false;
             transform.position += buttonTranslation;
