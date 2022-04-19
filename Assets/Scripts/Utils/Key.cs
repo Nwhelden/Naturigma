@@ -14,30 +14,14 @@ public class Key : MonoBehaviour
     private void Start()
     {
         originalPos = transform.position;
-    }
-
-    public void Activate()
-    {
-        isActive = true;
-        activate.Invoke();
-    }
-
-    // Deactivate should return to status-quo
-    public void Deactivate()
-    {
-        isActive = false;
-        deactivate.Invoke();
+        Float();
     }
 
     public void Respawn()
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         transform.position = originalPos;
-    }
-
-    public bool CheckActive()
-    {
-        return isActive;
+        Float();
     }
 
     public bool CheckHeld()
@@ -48,5 +32,10 @@ public class Key : MonoBehaviour
     public void SetHeld(bool held)
     {
         isHeld = held;
+    }
+
+    private void Float()
+    {
+        var rb = GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
 }

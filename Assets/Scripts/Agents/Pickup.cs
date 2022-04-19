@@ -8,6 +8,10 @@ public class Pickup : MonoBehaviour
     public float throwForce = 10.0f;
     public bool playerPickup = true;
 
+    //audio
+    public AudioClip throwSFX;
+    public AudioClip pickSFX;
+
     private bool holding = false;
     private HashSet<GameObject> items;
     private GameObject curr = null;
@@ -103,6 +107,12 @@ public class Pickup : MonoBehaviour
             headPad.ToggleActive();
         }
         curr = null;
+
+        // Play Audio
+        if (throwSFX != null)
+        {
+            GetComponent<AudioSource>().PlayOneShot(throwSFX);
+        }
     }
 
     private void Pick()
@@ -125,10 +135,12 @@ public class Pickup : MonoBehaviour
                 var key = curr.GetComponent<Key>();
                 key.SetHeld(true);
 
+                /*
                 if (key.CheckActive())
                 {
                     key.Deactivate();
                 }
+                */
             }
 
             // Disable Player's bounce pad to prevent conflictions
@@ -144,6 +156,12 @@ public class Pickup : MonoBehaviour
             curr.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             curr.transform.SetParent(gameObject.transform);
             curr.transform.position = new Vector3(parent.position.x, parent.position.y + yOffset, parent.position.z);
+
+            // Play Audio
+            if (pickSFX != null)
+            {
+                GetComponent<AudioSource>().PlayOneShot(pickSFX);
+            }
 
             Debug.Log("Picked up " + curr.name);
         }
