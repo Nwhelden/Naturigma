@@ -263,7 +263,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyName: Key
-  KeyOffset: {x: 0, y: 0, z: 0}
+  KeyOffset: {x: 0, y: 2, z: 0}
+  activate:
+    m_PersistentCalls:
+      m_Calls: []
+  deactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  key: {fileID: 0}
 --- !u!65 &129773947
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1160,7 +1167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147198442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.05, y: 2.97, z: 0}
+  m_LocalPosition: {x: -4.33, y: 2.97, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}

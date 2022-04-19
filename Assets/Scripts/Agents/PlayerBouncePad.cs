@@ -6,6 +6,7 @@ public class PlayerBouncePad : MonoBehaviour
 {
     public float bounceForce = 10.0f;
     public float cooldown = 2.0f;
+    public AudioClip bounceSFX;
     private bool active = true;
     private bool disabled = false;
 
@@ -27,6 +28,13 @@ public class PlayerBouncePad : MonoBehaviour
                 active = false;
                 StartCoroutine(Cooldown());
                 Debug.Log("Bounced");
+
+                if (bounceSFX != null)
+                {
+                    GetComponent<AudioSource>().time = 0.75f;
+                    GetComponent<AudioSource>().PlayOneShot(bounceSFX);
+                    GetComponent<AudioSource>().time = 0.0f;
+                }
             }
         }
     }
