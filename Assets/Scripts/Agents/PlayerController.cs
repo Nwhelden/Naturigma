@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public AudioClip deathSFX;
 
     private bool canJump = false;
-    private bool disabled = false;
+    public bool disabled = false;
     private Vector3 jumpDir;
     private Animator animator;
     private Rigidbody rb;
