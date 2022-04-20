@@ -27,11 +27,8 @@ public class ButtonHold : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (cooldown <= 0)
-        {
-            isOn = false;
-            transform.position += buttonTranslation;
-            cooldown = 1f;
-        }
+        isOn = false;
+        transform.position += buttonTranslation;
+        cooldown = 1f;
     }
 }

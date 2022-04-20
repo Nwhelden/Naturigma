@@ -847,7 +847,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a0652deceb93f4b6db2ca5434db5dbd7,
         type: 3}
       propertyPath: m_Name
-      value: CrystalSingle (1)
+      value: CrystalSingle
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a0652deceb93f4b6db2ca5434db5dbd7,
         type: 3}
@@ -3358,6 +3358,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2605931710798131250, guid: 553fd1f4dda9e486e9cb43b412b86fc7, type: 3}
+--- !u!1 &719871378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11f8fd188adf14985b61d04d282ef130,
+    type: 3}
+  m_PrefabInstance: {fileID: 1335033786}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &719871379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719871378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da7b4ece301aee4c8f3ddbc67f75af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateGO: {fileID: 1000105038}
+  activated: 0
 --- !u!1001 &727411500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3679,6 +3699,26 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1441757293723600657, guid: 023a0da8717644cb9a730a71f9323b77, type: 3}
+--- !u!1 &776348306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 11f8fd188adf14985b61d04d282ef130,
+    type: 3}
+  m_PrefabInstance: {fileID: 1257606497}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &776348307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776348306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6da7b4ece301aee4c8f3ddbc67f75af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateGO: {fileID: 1347960527}
+  activated: 0
 --- !u!1001 &797533655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3852,6 +3892,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 49.743004, y: -31.492, z: 4.2320004}
+--- !u!1 &825074345 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f2ab457aa9e4440496a6f03673144e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1904625690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &825074348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825074345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a82ae1459bb763489a41c1a12d7a037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: 
+  unlockSFX: {fileID: 0}
+  lockSFX: {fileID: 0}
+  KeyPos: {x: 0, y: 0, z: 0}
+  activate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 776348307}
+        m_MethodName: OpeningGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  deactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 776348307}
+        m_MethodName: CloseGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &825523859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4253,6 +4343,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1441757293723600657, guid: 023a0da8717644cb9a730a71f9323b77, type: 3}
+--- !u!1 &1000105038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7631519033783230797, guid: 11f8fd188adf14985b61d04d282ef130,
+    type: 3}
+  m_PrefabInstance: {fileID: 1335033786}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1010873210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5726,6 +5822,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1726597805}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1347960527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7631519033783230797, guid: 11f8fd188adf14985b61d04d282ef130,
+    type: 3}
+  m_PrefabInstance: {fileID: 1257606497}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1367254660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5760,6 +5862,56 @@ Transform:
   m_Father: {fileID: 1396932447}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 266.494, z: 0}
+--- !u!1 &1375376605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7f2ab457aa9e4440496a6f03673144e2,
+    type: 3}
+  m_PrefabInstance: {fileID: 797533655}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1375376608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1375376605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a82ae1459bb763489a41c1a12d7a037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyName: 
+  unlockSFX: {fileID: 0}
+  lockSFX: {fileID: 0}
+  KeyPos: {x: 0, y: 0, z: 0}
+  activate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 719871379}
+        m_MethodName: OpeningGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  deactivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 719871379}
+        m_MethodName: CloseGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1380372044 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 582977ebaa4cd49b3a7f8928d289d331,
@@ -7391,7 +7543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a82ae1459bb763489a41c1a12d7a037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyName: 
+  keyName: CrystalSingle
   unlockSFX: {fileID: 0}
   lockSFX: {fileID: 0}
   KeyPos: {x: 0, y: 0, z: 0}
@@ -7662,7 +7814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a82ae1459bb763489a41c1a12d7a037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyName: 
+  keyName: CrystalSingle
   unlockSFX: {fileID: 0}
   lockSFX: {fileID: 0}
   KeyPos: {x: 0, y: 0, z: 0}
@@ -9811,6 +9963,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -12.733001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4514079552713780218, guid: a63d8f5b7ea8570408cb88f3c8c81068,
+        type: 3}
+      propertyPath: keyName
+      value: CrystalSingle
       objectReference: {fileID: 0}
     - target: {fileID: 4514079552713780218, guid: a63d8f5b7ea8570408cb88f3c8c81068,
         type: 3}
