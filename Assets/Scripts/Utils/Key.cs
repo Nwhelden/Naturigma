@@ -7,9 +7,9 @@ public class Key : MonoBehaviour
 {
     private Vector3 originalPos;
     private bool isHeld = false;
-    private bool isActive = false;
-    public UnityEvent activate;
-    public UnityEvent deactivate;
+    //private bool isActive = false;
+    //public UnityEvent activate;
+    //public UnityEvent deactivate;
 
     private void Start()
     {
