@@ -11109,21 +11109,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2413927643492506030, guid: 1392b1408c607488f83ce1b6a05506e0,
         type: 3}
-      propertyPath: KeyOffset.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2413927643492506030, guid: 1392b1408c607488f83ce1b6a05506e0,
-        type: 3}
-      propertyPath: KeyOffset.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2413927643492506030, guid: 1392b1408c607488f83ce1b6a05506e0,
-        type: 3}
-      propertyPath: KeyOffset.z
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2413927643492506030, guid: 1392b1408c607488f83ce1b6a05506e0,
-        type: 3}
       propertyPath: activate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 907585825}
