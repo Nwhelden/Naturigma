@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level2MovingPlatform : MonoBehaviour
 {
-    Rigidbody rb;
+    //Rigidbody rb;
     
     public GameObject startWaypoint;
     public GameObject endWaypoint;
@@ -17,7 +17,7 @@ public class Level2MovingPlatform : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         SetNewCourse();
     }
 
@@ -25,6 +25,7 @@ public class Level2MovingPlatform : MonoBehaviour
     {
         if (isOn)
         {
+            print("running");
             transform.position += -travelVector * speed * 0.25f * Time.deltaTime;
             if (goToEnd && Vector3.Distance(transform.position, endWaypoint.transform.position) < 0.5f)
             {
