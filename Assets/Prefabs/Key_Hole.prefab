@@ -110,7 +110,7 @@ MonoBehaviour:
   keyName: Key_Crystal
   unlockSFX: {fileID: 8300000, guid: db8da803edbbbcf4fb154db95180ac37, type: 3}
   lockSFX: {fileID: 0}
-  KeyOffset: {x: -0.0138, y: -0.0054, z: -0.0008}
+  KeyPos: {x: -0.0123, y: -0.00669, z: -0.0009}
   activate:
     m_PersistentCalls:
       m_Calls:

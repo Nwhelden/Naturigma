@@ -8,7 +8,7 @@ public class Keylock : MonoBehaviour
     public string keyName;
     public AudioClip unlockSFX;
     public AudioClip lockSFX;
-    public Vector3 KeyPos;
+    public Vector3 KeyOffset;
     public UnityEvent activate;
     public UnityEvent deactivate;
 
@@ -25,7 +25,7 @@ public class Keylock : MonoBehaviour
             key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             key.GetComponent<Rigidbody>().useGravity = false;
             key.transform.SetParent(gameObject.transform);
-            key.transform.position = KeyPos;
+            key.transform.position = transform.position + KeyOffset;
 
             //Activate key
             Activate();
@@ -34,6 +34,8 @@ public class Keylock : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
+        Debug.Log("Deactivated");
+
         if (collision.CompareTag("Item") && collision.gameObject.name.Equals(keyName))
         {
             Deactivate();
