@@ -9,39 +9,24 @@ public class AdjustCameraZone : MonoBehaviour
     public bool adjustCam;
     public float adjustTilt, adjustY, adjustZ;
 
+    public bool checkForSwitch;
+
     private void Start()
     {
         cam = Camera.main.GetComponent<CameraController>();
     }
 
-    /*private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if(other.gameObject.tag == "Player" && !other.gameObject.GetComponent<PlayerController>().disabled)
+        if (Input.GetKeyDown(KeyCode.Return))
         {
-            adjustCam = true;
-            cam.PosY += adjustY;
-            cam.PosZ += adjustZ;
-            cam.tilt += adjustTilt;
+            checkForSwitch = true;
         }
-        
     }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player" && !other.gameObject.GetComponent<PlayerController>().disabled)
-        {
-            adjustCam = false;
-            cam.PosY -= adjustY;
-            cam.PosZ -= adjustZ;
-            cam.tilt -= adjustTilt;
-        }
-        
-    }
-    */
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !other.gameObject.GetComponent<PlayerController>().disabled)
+        if (other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerController>().disabled == false)
         {
             if(adjustCam == false)
             {
@@ -51,14 +36,18 @@ public class AdjustCameraZone : MonoBehaviour
                 cam.tilt += adjustTilt;
             }
         }
-        else if(other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerController>().disabled)
+        if (checkForSwitch)
         {
-            if(adjustCam == true)
+            if(other.gameObject.tag == "Player" && other.gameObject.GetComponent<PlayerController>().disabled == true)
             {
-                adjustCam = false;
-                cam.PosY += -adjustY;
-                cam.PosZ += -adjustZ;
-                cam.tilt += -adjustTilt;
+                if (adjustCam == true)
+                {
+                    adjustCam = false;
+                    cam.PosY += -adjustY;
+                    cam.PosZ += -adjustZ;
+                    cam.tilt += -adjustTilt;
+                    checkForSwitch = false;
+                }
             }
         }
     }
