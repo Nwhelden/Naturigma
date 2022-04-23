@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level2MovingPlatform : MonoBehaviour
 {
-    //Rigidbody rb;
+    Rigidbody rb;
     
     public GameObject startWaypoint;
     public GameObject endWaypoint;
@@ -17,7 +17,7 @@ public class Level2MovingPlatform : MonoBehaviour
 
     private void Start()
     {
-        //rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         SetNewCourse();
     }
 
@@ -25,8 +25,9 @@ public class Level2MovingPlatform : MonoBehaviour
     {
         if (isOn)
         {
-            print("running");
-            transform.position += -travelVector * speed * 0.25f * Time.deltaTime;
+            rb.isKinematic = false;
+            rb.MovePosition(transform.position + -travelVector * speed * 0.25f * Time.deltaTime);
+
             if (goToEnd && Vector3.Distance(transform.position, endWaypoint.transform.position) < 0.5f)
             {
                 goToEnd = false;
@@ -37,6 +38,18 @@ public class Level2MovingPlatform : MonoBehaviour
                 goToEnd = true;
                 SetNewCourse();
             }
+        }
+        else
+        {
+            rb.isKinematic = true;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.rigidbody && isOn && collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + -travelVector * speed * 0.25f * Time.deltaTime);
         }
     }
 
