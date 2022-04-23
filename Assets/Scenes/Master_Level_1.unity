@@ -8968,6 +8968,7 @@ GameObject:
   - component: {fileID: 1796799473}
   - component: {fileID: 1796799472}
   - component: {fileID: 1796799471}
+  - component: {fileID: 1796799474}
   m_Layer: 8
   m_Name: Rock_Moss_1 (1)
   m_TagString: Ground
@@ -9051,6 +9052,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1796799469}
   m_Mesh: {fileID: -8168516100430604780, guid: 0f08fa172269b4fed960a33e006b4e83, type: 3}
+--- !u!114 &1796799474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796799469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bddc498ca42ac7c47b4fe4e1914f7e23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shroomOffset: {x: -1, y: 6.5, z: 0}
+  fungOffset: {x: 1, y: 6.5, z: 0}
 --- !u!1 &1803165704
 GameObject:
   m_ObjectHideFlags: 0
