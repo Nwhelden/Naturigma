@@ -10,7 +10,6 @@ public class CameraController : MonoBehaviour
     public int Smoothvalue = 2;
     public float PosY = 5;
     public float PosZ = 5;
-    public float PosX = 15;
 
     public Vector3 offset;
 
@@ -22,6 +21,7 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        GetComponent<Camera>().enabled = true;
         Target = Agent1;
         Agent2.GetComponent<PlayerController>().ToggleActive();
     }
@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
         rotation.x = tilt;
         transform.rotation = Quaternion.Euler(rotation);
 
-        if (Input.GetKey(KeyCode.C))
+        /*if (Input.GetKey(KeyCode.C))
         {
             if(Agent1.GetComponent<PlayerController>().disabled == false)
             {
@@ -47,7 +47,7 @@ public class CameraController : MonoBehaviour
                 transform.position = cameraLoc2.position;
                 transform.LookAt(Agent2.transform);
             }
-        }
+        }*/
 
         if (!disabled && Input.GetKeyDown(KeyCode.Return))
         {
