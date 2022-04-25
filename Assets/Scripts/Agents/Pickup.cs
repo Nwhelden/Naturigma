@@ -87,6 +87,7 @@ public class Pickup : MonoBehaviour
         // Throw the currently picked-up item
         var itemRb = curr.GetComponent<Rigidbody>();
         itemRb.useGravity = true;
+        itemRb.isKinematic = false;
         itemRb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
 
         // item-specific functions

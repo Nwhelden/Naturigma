@@ -44,4 +44,9 @@ public class Key : MonoBehaviour
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         GetComponent<Rigidbody>().useGravity = true;
     }
+
+    public void DoNothing()
+    {
+        print("Do Nothing lol");
+    }
 }
