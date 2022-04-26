@@ -62,4 +62,14 @@ public class WaypointPlatform : MonoBehaviour
             collision.gameObject.transform.SetParent(null);
         }
     }
+
+    public void Activate()
+    {
+        active = true;
+    }
+
+    public void Deactivate()
+    {
+        active = false;
+    }
 }
