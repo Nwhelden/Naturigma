@@ -38,4 +38,15 @@ public class Key : MonoBehaviour
     {
         var rb = GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
     }
+
+    public void ActivateGravity()
+    {
+        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        GetComponent<Rigidbody>().useGravity = true;
+    }
+
+    public void DoNothing()
+    {
+        print("Do Nothing lol");
+    }
 }

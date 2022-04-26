@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Level2MovingPlatform : MonoBehaviour
 {
-    Rigidbody rb;
+    //Rigidbody rb;
     
     public GameObject startWaypoint;
     public GameObject endWaypoint;
@@ -17,7 +17,7 @@ public class Level2MovingPlatform : MonoBehaviour
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         SetNewCourse();
     }
 
@@ -25,8 +25,8 @@ public class Level2MovingPlatform : MonoBehaviour
     {
         if (isOn)
         {
-            rb.isKinematic = false;
-            rb.MovePosition(transform.position + -travelVector * speed * 0.25f * Time.deltaTime);
+            //rb.isKinematic = false;
+            transform.position += -travelVector * speed * 0.25f * Time.deltaTime;
 
             if (goToEnd && Vector3.Distance(transform.position, endWaypoint.transform.position) < 0.5f)
             {
@@ -41,7 +41,7 @@ public class Level2MovingPlatform : MonoBehaviour
         }
         else
         {
-            rb.isKinematic = true;
+            //rb.isKinematic = true;
         }
     }
 
@@ -49,7 +49,23 @@ public class Level2MovingPlatform : MonoBehaviour
     {
         if(collision.rigidbody && isOn && collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + -travelVector * speed * 0.25f * Time.deltaTime);
+            //collision.gameObject.GetComponent<Rigidbody>().MovePosition(transform.position + -travelVector * speed * 0.25f * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            other.transform.parent = transform;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            other.transform.parent = null;
         }
     }
 
