@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class OtherLever : MonoBehaviour
 {
     public bool isOn;
     private bool canActivate = false;
+    public UnityEvent activate;
 
     public void Update()
     {
@@ -14,6 +16,7 @@ public class OtherLever : MonoBehaviour
             //animate lever flip
             transform.Rotate(0, 180, 0);
             isOn = true;
+            activate.Invoke();
 
             if (GetComponent<AudioSource>() != null)
             {
