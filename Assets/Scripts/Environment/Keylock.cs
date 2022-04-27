@@ -19,7 +19,7 @@ public class Keylock : MonoBehaviour
 
         // Check if the item is a key, and if the key is associated with the lock
         // This allows multiple keys to exist in a scene, but limits the lock to 1 unique key 
-        if (collision.CompareTag("Item") && key && obj.name.Equals(keyName))
+        if (collision.CompareTag("Item") && key && obj.name.Equals(keyName) && !key.CheckHeld())
         {
             // Position key
             key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
