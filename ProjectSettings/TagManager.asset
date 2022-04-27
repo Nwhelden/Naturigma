@@ -9,6 +9,7 @@ TagManager:
   - Item
   - StartPoint
   - EndPoint
+  - BackgroundAudio
   layers:
   - Default
   - TransparentFX
