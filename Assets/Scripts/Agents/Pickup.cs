@@ -32,7 +32,7 @@ public class Pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.isActive() && Input.GetMouseButtonDown(0))
+        if (player.isActive() && Input.GetKeyDown(KeyCode.F))
         {
             if (curr != null)
             {
