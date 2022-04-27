@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Key : MonoBehaviour
 {
+    public AudioClip destructSFX;
     private Vector3 originalPos;
     private bool isHeld = false;
     //private bool isActive = false;
@@ -19,6 +20,10 @@ public class Key : MonoBehaviour
 
     public void Respawn()
     {
+        if (GetComponent<AudioSource>() && destructSFX != null)
+        {
+            GetComponent<AudioSource>().PlayOneShot(destructSFX);
+        }
         GetComponent<Rigidbody>().velocity = Vector3.zero;
         transform.position = originalPos;
         Float();
