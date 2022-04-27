@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Master_Level_2_Layout.unity
     guid: 08b0f4e7a8ba244719d2377c06e23923
+  - enabled: 1
+    path: Assets/Scenes/Master_Level_3_Layout.unity
+    guid: 9db86748dbaff451fb3aba77089e49b3
+  - enabled: 1
+    path: Assets/Scenes/End_Screen.unity
+    guid: 8ce979c9e14224476810721724c5d15e
   m_configObjects: {}
