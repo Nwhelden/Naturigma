@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyName: Key_Crystal
   unlockSFX: {fileID: 8300000, guid: db8da803edbbbcf4fb154db95180ac37, type: 3}
-  lockSFX: {fileID: 8300000, guid: 2cfdf01a818a7c34596d663f1051dc05, type: 3}
+  lockSFX: {fileID: 8300000, guid: 515f233b7063fb842902ac48590814c1, type: 3}
   KeyOffset: {x: -0.0154, y: -0.0037, z: -0.0012}
   activate:
     m_PersistentCalls:

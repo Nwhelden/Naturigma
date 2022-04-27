@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93108cfbfa4438a448ed314176c2673f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructSFX: {fileID: 8300000, guid: e02c04a120f9fe04ab62bc5ff07d6703, type: 3}
+  destructSFX: {fileID: 8300000, guid: 2c627f88f99bddc40b944464882defc6, type: 3}
 --- !u!82 &-81009922851458766
 AudioSource:
   m_ObjectHideFlags: 0
