@@ -4,18 +4,28 @@ using UnityEngine;
 
 public class Credits_Buttons : MonoBehaviour
 {
-    public GameObject creditsmenu;
+    public GameObject creditspage1;
     public GameObject startbuttons;
+    public GameObject creditspage2;
 
-    public void CreditsButton()
+    public void Credits1Button()
     { 
-        creditsmenu.SetActive(true);
+        creditspage1.SetActive(true);
+        creditspage2.SetActive(false);
+        startbuttons.SetActive(false);
+    }
+
+    public void Credits2Button()
+    {
+        creditspage1.SetActive(false);
+        creditspage2.SetActive(true);
         startbuttons.SetActive(false);
     }
 
     public void Back()
     {
-        creditsmenu.SetActive(false);
+        creditspage1.SetActive(false);
+        creditspage2.SetActive(false);
         startbuttons.SetActive(true);
     }
 }
