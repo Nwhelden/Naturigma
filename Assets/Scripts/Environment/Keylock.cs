@@ -25,7 +25,7 @@ public class Keylock : MonoBehaviour
             key.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             key.GetComponent<Rigidbody>().useGravity = false;
             key.transform.SetParent(gameObject.transform);
-            key.transform.position = transform.position + KeyOffset;
+            key.transform.localPosition = Vector3.zero + KeyOffset;
 
             //Activate key
             Activate();
