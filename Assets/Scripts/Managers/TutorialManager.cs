@@ -42,6 +42,9 @@ public class TutorialManager : MonoBehaviour
 
     public void QuitToMenu()
     {
+        var obj = GameObject.FindGameObjectWithTag("BackgroundAudio");
+        obj.GetComponent<AudioSource>().Stop();
+        Destroy(obj);
         SceneManager.LoadScene(0);
     }
 
