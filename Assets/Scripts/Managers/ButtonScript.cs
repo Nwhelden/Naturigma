@@ -8,6 +8,8 @@ public class ButtonScript : MonoBehaviour
     public string loadlevel1;
     public string loadlevel2;
 
+
+
     public void StartLevel1()
     {
         Application.LoadLevel(startlevel);
@@ -22,6 +24,7 @@ public class ButtonScript : MonoBehaviour
     {
         Application.LoadLevel(loadlevel2);
     }
+
 
     public void QuitButton()
     {
